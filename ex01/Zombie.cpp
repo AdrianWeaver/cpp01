@@ -6,7 +6,7 @@
 /*   By: aweaver <aweaver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 10:45:11 by aweaver           #+#    #+#             */
-/*   Updated: 2022/11/10 14:27:29 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/11/10 15:07:35 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Zombie::Zombie(void)
 
 Zombie::Zombie(std::string name) : _name(name)
 {
+	std::cout << "This is the Zombie constructor for " << this->_name << std::endl;
 	return ;
 }
 
