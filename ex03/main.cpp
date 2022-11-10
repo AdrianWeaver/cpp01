@@ -6,8 +6,10 @@
 /*   By: aweaver <aweaver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:03:04 by aweaver           #+#    #+#             */
-/*   Updated: 2022/11/10 17:03:08 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/11/10 17:06:32 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"

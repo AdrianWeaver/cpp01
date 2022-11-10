@@ -6,8 +6,11 @@
 /*   By: aweaver <aweaver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:03:02 by aweaver           #+#    #+#             */
-/*   Updated: 2022/11/10 17:03:07 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/11/10 17:16:30 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
+#endif
