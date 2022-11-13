@@ -6,7 +6,7 @@
 /*   By: aweaver <aweaver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:12:19 by aweaver           #+#    #+#             */
-/*   Updated: 2022/11/13 11:20:54 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/11/13 22:15:09 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(int argc, char **argv)
 	std::ifstream	inputfile;
 	std::ofstream	outputfile;
 	std::string		outputname;
+	std::string		replace = ".replace";
 
 	if (argc != 4)
 	{
@@ -34,12 +35,18 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	outputname = argv[1];
-	outputfile.open(outputname.append(".replace"), std::ofstream::out);
+	outputfile.open(outputname.append(replace).c_str(), std::ofstream::out | std::ofstream::app);
 	while (!inputfile.eof())
 	{
 		std::getline(inputfile, buffer);
 		std::cout << buffer << std::endl;
+		buffer.find(
+		outputfile << buffer;
+		if (!inputfile.eof())
+			outputfile << std::endl;
 	}
+	outputfile.close();
 	inputfile.close();
+	std::cout << "closing the program" << std::endl;
 	return (0);
 }
