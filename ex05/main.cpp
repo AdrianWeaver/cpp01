@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweaver <aweaver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 09:10:20 by aweaver           #+#    #+#             */
-/*   Updated: 2022/11/14 11:30:52 by aweaver          ###   ########.fr       */
+/*   Created: 2022/11/14 11:16:33 by aweaver           #+#    #+#             */
+/*   Updated: 2022/11/14 12:13:24 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
-# include <string>
-# include <iostream>
+#include "Harl.hpp"
 
-class Harl
+int main(int argc, char **argv)
 {
-	public:
-		Harl(void);
-		~Harl(void);
-		void	complain(std::string level);
-	protected:
-	private:
-		void	_debug(void);
-		void	_info(void);
-		void	_warning(void);
-		void	_error(void);
-};
+	Harl harl;
 
-#endif
+	if (argc != 2)
+	{
+		std::cout << "This program takes an alert level as parameter" << std::endl;
+		return (0);
+	}
+	harl.complain(argv[1]);
+	harl.complain("Debug");
+	harl.complain("DEBUG");
+	harl.complain("ERROR");
+	harl.complain("WARNING");
+	harl.complain(argv[1]);
+	return (0);
+}
+

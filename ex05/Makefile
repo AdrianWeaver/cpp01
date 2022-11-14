@@ -2,10 +2,10 @@ NAME = Harl
 
 CXX = c++
 
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g3
 CPPFLAGS	= -MMD
 
-SRCS		=	main.cpp \
+SRCS		=	main.cpp\
 				Harl.cpp
 
 
@@ -29,7 +29,7 @@ re: fclean
 	make all
 
 test:	$(NAME)
-		./$(NAME)
+		./$(NAME) DEBUG
 
 -include $(DEPS)
 
