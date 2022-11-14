@@ -6,13 +6,30 @@
 /*   By: aweaver <aweaver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:12:19 by aweaver           #+#    #+#             */
-/*   Updated: 2022/11/13 22:15:09 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/11/14 08:46:34 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include <fstream>
+
+void	ft_replace(std::string &str, std::string toFind, std::string toInsert)
+{
+	size_t	index;
+	size_t	toFindLen;
+
+	toFindLen = toFind.length();
+	do
+	{
+		index = str.find(toFind, toFindLen);
+		if (index != std::string::npos)
+		{
+			str.erase(index, toFindLen);
+			str.insert(index, toInsert);
+		}
+	}	while (index != std::string::npos);
+}
 
 int	main(int argc, char **argv)
 {
@@ -40,7 +57,7 @@ int	main(int argc, char **argv)
 	{
 		std::getline(inputfile, buffer);
 		std::cout << buffer << std::endl;
-		buffer.find(
+		ft_replace(buffer, argv[2], argv[3]);
 		outputfile << buffer;
 		if (!inputfile.eof())
 			outputfile << std::endl;
