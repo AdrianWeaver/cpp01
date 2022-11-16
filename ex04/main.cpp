@@ -6,7 +6,7 @@
 /*   By: aweaver <aweaver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:12:19 by aweaver           #+#    #+#             */
-/*   Updated: 2022/11/14 08:46:34 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/11/16 09:06:24 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,18 +52,17 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	outputname = argv[1];
-	outputfile.open(outputname.append(replace).c_str(), std::ofstream::out | std::ofstream::app);
+	outputfile.open(outputname.append(replace).c_str(), std::ofstream::out | std::ofstream::trunc);
 	while (!inputfile.eof())
 	{
 		std::getline(inputfile, buffer);
-		std::cout << buffer << std::endl;
 		ft_replace(buffer, argv[2], argv[3]);
+		std::cout << buffer << std::endl;
 		outputfile << buffer;
 		if (!inputfile.eof())
 			outputfile << std::endl;
 	}
 	outputfile.close();
 	inputfile.close();
-	std::cout << "closing the program" << std::endl;
 	return (0);
 }
